@@ -1,13 +1,26 @@
 package tn.edu.BookStoreSpring;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import tn.edu.BookStoreSpring.DOA.Book;
+import tn.edu.BookStoreSpring.Service.BookService;
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class BookStoreSpringApplicationTests {
-
+public class BookStoreSpringApplicationTests {
+	@Autowired
+	BookService bookservice;
+	
 	@Test
-	void contextLoads() {
+	public void testbookSugg()
+	{
+		bookservice.bookSugg();
+	
 	}
 
+	
 }

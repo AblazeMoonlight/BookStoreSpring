@@ -1,18 +1,22 @@
 package tn.edu.BookStoreSpring.DOA;
 
 import javax.persistence.*;
+
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
-@Table(name = "T_Book")
+@Table(name = "Book")
 public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdBook")
     private int idBook;
     private float price;
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "books")
+    private Set<UserFavoriteBooks> userFavoriteBooks;
     private String title, author, isbn, publisher, cover,description,category;
     @Temporal (TemporalType.DATE)
     private Date releaseDate;
@@ -29,6 +33,17 @@ public class Book implements Serializable {
 		this.description = description;
 		this.category = category;
 		this.releaseDate = releaseDate;
+	}
+
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Book [idBook=" + idBook + ", price=" + price + ", title=" + title + ", author=" + author + ", isbn="
+				+ isbn + ", publisher=" + publisher + ", cover=" + cover + ", description=" + description
+				+ ", category=" + category + ", releaseDate=" + releaseDate + "]";
 	}
 
 	@Override

@@ -85,7 +85,6 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -103,10 +102,7 @@
         <testFailureIgnore>true</testFailureIgnore>
     </configuration>
 </plugin>
-		
-		
-		
-		</plugins>
+	</plugins>
 	</build>
 
 </project>

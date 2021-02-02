@@ -12,9 +12,9 @@ import tn.edu.BookStoreSpring.Service.UserService;
 
 
 @Component
-public class AblazeAuthenticationProvider implements AuthenticationProvider {
+public class AblazeAuthenticationProvider  {
 
-    @Autowired
+ /*  @Autowired
     UserService userService;
 
     @Override
@@ -36,5 +36,5 @@ public class AblazeAuthenticationProvider implements AuthenticationProvider {
     @Override
     public boolean supports(Class<?> authentication) {
         return authentication.equals(UsernamePasswordAuthenticationToken.class);
-    }
+    }*/
 }

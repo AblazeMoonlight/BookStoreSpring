@@ -1,6 +1,6 @@
 package tn.edu.BookStoreSpring.security;
 
-/*
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -60,4 +60,3 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         response.setHeader("Access-Control-Expose-Headers","*, Authorization"); // Allow Access to authorization token
     }
 }
-*/

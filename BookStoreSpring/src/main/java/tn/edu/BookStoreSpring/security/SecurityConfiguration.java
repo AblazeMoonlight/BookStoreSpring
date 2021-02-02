@@ -1,5 +1,5 @@
 package tn.edu.BookStoreSpring.security;
-/*
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -61,4 +61,3 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 }
 
-*/

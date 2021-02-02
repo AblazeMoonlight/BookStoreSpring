@@ -1,5 +1,5 @@
 package tn.edu.BookStoreSpring.security;
-/*
+
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.SignatureException;
 import org.apache.commons.lang3.StringUtils;
@@ -75,4 +75,3 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
         return null;
     }
 }
-*/

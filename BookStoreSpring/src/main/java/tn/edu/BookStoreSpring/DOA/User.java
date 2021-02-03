@@ -1,7 +1,11 @@
 package tn.edu.BookStoreSpring.DOA;
 
 import javax.persistence.*;
+
+
+
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,8 +23,19 @@ public class User implements Serializable {
 
     @OneToOne
     private Payment payment;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<UserFavoriteBooks> ufb;
+	
+    
+	public List<UserFavoriteBooks> getUfb() {
+		return ufb;
+	}
 
-    @OneToOne
+	public void setUfb(List<UserFavoriteBooks> ufb) {
+		this.ufb = ufb;
+	}
+
+	@OneToOne
     private Cart cart;
 
     @OneToMany(cascade = CascadeType.ALL)

@@ -12,11 +12,11 @@ import java.util.Set;
 public class Book implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idBook;
     private float price;
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "books")
-    private Set<UserFavoriteBooks> userFavoriteBooks;
+    @ManyToOne(cascade = CascadeType.ALL)
+   UserFavoriteBooks userFavoriteBooks;
     private String title, author, isbn, publisher, cover,description,category;
     @Temporal (TemporalType.DATE)
     private Date releaseDate;

@@ -5,9 +5,10 @@ import java.util.List;
 import tn.edu.BookStoreSpring.DOA.Book;
 
 public interface UserFavoriteBookService {
-	List<Book> retrieveUserFavoriteBooks();
-	void addBookToFavorite(Book b);
-	void RemoveFromFavorites(Book b);
+	List<Book> retrieveUserFavoriteBooks(int userId);
+	void addBookToFavorite(Book b,int userId);
+	void RemoveFromFavorites(Book b,int userId);
+	String  bookSugg(int userId);
 	
 	
 	

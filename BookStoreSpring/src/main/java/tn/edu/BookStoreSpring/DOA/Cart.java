@@ -13,7 +13,7 @@ public class Cart implements Serializable {
     @Column(name = "IdCart")
     private int idCart;
 
-    @OneToOne(mappedBy = "cart")
+    @OneToOne
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)

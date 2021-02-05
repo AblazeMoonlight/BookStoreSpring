@@ -12,7 +12,7 @@ public class Payment implements Serializable {
     @Column(name = "IdPayment")
     private int idPayment;
 
-    @OneToOne(mappedBy = "payment")
+    @OneToOne
     private User user;
 
     public int getIdPayment() {

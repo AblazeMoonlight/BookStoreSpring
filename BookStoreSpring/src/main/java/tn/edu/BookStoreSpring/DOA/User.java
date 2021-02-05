@@ -6,21 +6,24 @@ import java.util.Set;
 
 @Entity
 @Table(name = "T_User")
-public class User implements Serializable {
-
+public class User extends DAO implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdUser")
-    private int idUser;
-    private int idPayment;
-    private int idCart;
-    private int idComment;
-    private int idReclamation;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idUser;
+    private String firstName;
+    private String lastName;
+    @Column(name="email", nullable = false, updatable = false)
+    private String email;
+    private String password;
+    private String phone;
+    private String role;
+    private int hPoints;
 
-    @OneToOne
+    @OneToOne(mappedBy = "user")
     private Payment payment;
 
-    @OneToOne
+    @OneToOne(mappedBy = "user")
     private Cart cart;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -29,75 +32,76 @@ public class User implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Reclamation> reclamations;
 
-    public int getIdUser() {
-        return idUser;
+    public User() {
     }
 
-    public void setIdUser(int idUser) {
+    public User(Long idUser, String firstName, String lastName, String email, String password, String phone, String role) {
         this.idUser = idUser;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.role = role;
     }
 
-    public int getIdPayment() {
-        return idPayment;
+    public User(Long idUser, String firstName, String lastName, String email, String password, String phone, String role, int hPoints) {
+        this.idUser = idUser;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.role = role;
+        this.hPoints = hPoints;
     }
 
-    public void setIdPayment(int idPayment) {
-        this.idPayment = idPayment;
-    }
+    public Long getIdUser() { return idUser; }
 
-    public int getIdCart() {
-        return idCart;
-    }
+    public void setIdUser(Long idUser) { this.idUser = idUser; }
 
-    public void setIdCart(int idCart) {
-        this.idCart = idCart;
-    }
+    public String getFirstName() { return firstName; }
 
-    public int getIdComment() {
-        return idComment;
-    }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public void setIdComment(int idComment) {
-        this.idComment = idComment;
-    }
+    public String getLastName() { return lastName; }
 
-    public int getIdReclamation() {
-        return idReclamation;
-    }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public void setIdReclamation(int idReclamation) {
-        this.idReclamation = idReclamation;
-    }
+    public String getEmail() { return email; }
 
-    public Payment getPayment() {
-        return payment;
-    }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
+    public String getPassword() { return password; }
 
-    public Cart getCart() {
-        return cart;
-    }
+    public void setPassword(String password) { this.password = password; }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
+    public String getPhone() { return phone; }
 
-    public Set<Comment> getComments() {
-        return comments;
-    }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
-    }
+    public String getRole() { return role; }
 
-    public Set<Reclamation> getReclamations() {
-        return reclamations;
-    }
+    public void setRole(String role) { this.role = role; }
 
-    public void setReclamations(Set<Reclamation> reclamations) {
-        this.reclamations = reclamations;
-    }
+    public int gethPoints() { return hPoints; }
+
+    public void sethPoints(int hPoints) { this.hPoints = hPoints; }
+
+
+    public Payment getPayment() { return payment; }
+
+    public void setPayment(Payment payment) { this.payment = payment; }
+
+    public Cart getCart() { return cart; }
+
+    public void setCart(Cart cart) { this.cart = cart; }
+
+    public Set<Comment> getComments() { return comments; }
+
+    public void setComments(Set<Comment> comments) { this.comments = comments; }
+
+    public Set<Reclamation> getReclamations() { return reclamations; }
+
+    public void setReclamations(Set<Reclamation> reclamations) { this.reclamations = reclamations; }
 }
